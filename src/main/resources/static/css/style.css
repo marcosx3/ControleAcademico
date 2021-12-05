@@ -1,0 +1,47 @@
+@charset "UTF-8";
+* {margin: 0;padding:0; box-sizing:border-box;}
+
+.navbar{
+    height:90px;
+
+}
+a {
+    font-weight: bold;
+    cursor: pointer;
+    color:#FFF;
+}
+
+.neo-section {
+
+    background-size: cover !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding: 30px;
+    position: relative;
+}
+.center {
+    text-align: center;
+}
+.wm {
+    width: 50%;
+    float: left;
+}
+.clear {
+    clear: both;
+}
+.neo-container {
+    margin-top: 200px;
+    max-width: 1280px;
+    padding: 2% 2%;
+    margin: 0 auto;
+}
+
+.rodape{
+   width: 100%;
+   height: 50px;
+   margin: auto;
+   bottom: 0;
+   position:fixed;
+   text-align:center;
+}

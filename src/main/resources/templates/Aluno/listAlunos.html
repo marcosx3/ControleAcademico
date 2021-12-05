@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+    <title>Listando Alunos</title>
+    <meta name="author" content="Marcos Oliveira da Silva">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/006642858d.js"></script>
+    <script src="/webjars/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div th:replace="fragmentos/fragmentos :: header"></div>
+
+<div class="container">
+    <h3>Alunos Cadastrados</h3>
+    <table class="table table-bordered">
+        <thead>
+        <th scope="col">Nome</th>
+        <th scope="col">Curso</th>
+        <th scope="col">Matricula</th>
+        <th scope="col">Status</th>
+        <th scope="col">Tuno</th>
+        <th scope="col">Ação</th>
+        </thead>
+        <tbody>
+            <tr scope="row"  th:each="alunos : ${alunosLista}">
+                <td th:text="${alunos.nome}"> </td>
+                <td th:text="${alunos.curso}"> </td>
+                <td th:text="${alunos.matricula}"> </td>
+                <td th:text="${alunos.status}"> </td>
+                <td th:text="${alunos.turno}"> </td>
+                <td>
+                    <a class="btn btn-primary" th:href="@{alterar/{id}(id=${alunos.id})}"><i class="fas fa-edit"></i> Editar </a>
+                    <a class="btn btn-danger" th:href="@{excluir/{id}(id=${alunos.id})}"><i class="fas fa-times"></i> Excluir </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="js/app.js"></script>
+<script src="/webjars/bootstrap/js/bootstrap.min.js" ></script>
+</body>
+</html>
